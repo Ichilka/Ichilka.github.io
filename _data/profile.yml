@@ -24,13 +24,13 @@ stats:
     label: plants migrated in 6 months
   - value: "100+"
     label: endpoints across facilities
-  - value: "12 yrs"
+  - value: "8 yrs"
     label: in IT — still hands-on
 
 # Contact / social. Leave a value blank to hide it.
-email: hello@ichikaonline.com
-linkedin: "https://www.linkedin.com/in/YOUR-LINKEDIN"
-github: "https://github.com/YOUR-GITHUB"
+email: dannyluongchau7@gmail.com
+linkedin: "https://www.linkedin.com/in/danny-luong-chau-332a352a3"
+github: "https://github.com/Ichilka"
 resume_url: ""
 
 # Availability note in the contact section.
