@@ -6,7 +6,7 @@
 # ─────────────────────────────────────────────────────────────────
 backend:
   name: github
-  repo: YOUR-USERNAME/YOUR-REPO   # ← EDIT THIS
+  repo: Ichilka/Ichilka.github.io   # ← EDIT THIS
   branch: main
 
 media_folder: assets/images/uploads
