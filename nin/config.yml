@@ -1,0 +1,130 @@
+# ─────────────────────────────────────────────────────────────────
+# Sveltia CMS config — the admin at /nin
+# REQUIRED: change `repo` to your GitHub username/repo before use.
+# Sign in with the "Sign in with GitHub Token" option (a fine-grained
+# PAT with Contents: Read & Write on this repo). No OAuth server needed.
+# ─────────────────────────────────────────────────────────────────
+backend:
+  name: github
+  repo: YOUR-USERNAME/YOUR-REPO   # ← EDIT THIS
+  branch: main
+
+media_folder: assets/images/uploads
+public_folder: /assets/images/uploads
+
+site_url: /
+display_url: /
+
+collections:
+  # ── Projects & case studies ────────────────────────────────────
+  - name: projects
+    label: Projects & Case Studies
+    label_singular: Project
+    folder: _projects
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: category
+        label: Category
+        widget: select
+        options:
+          - { label: Case Study (leadership work), value: case-study }
+          - { label: Homelab (hands-on lab), value: homelab }
+        default: case-study
+      - { name: featured, label: Featured, widget: boolean, default: true }
+      - { name: order, label: Sort Order (lower = first), widget: number, default: 5 }
+      - { name: timeframe, label: Timeframe, widget: string, hint: "e.g. 6 months, Ongoing" }
+      - { name: role, label: Your Role, widget: string }
+      - { name: summary, label: One-Line Summary, widget: text }
+      - { name: challenge, label: Challenge, widget: text }
+      - name: approach
+        label: Approach (bullet points)
+        widget: list
+        field: { name: item, label: Point, widget: text }
+      - name: outcome
+        label: Outcome (bullet points)
+        widget: list
+        field: { name: item, label: Point, widget: text }
+      - name: stack
+        label: Tech / Skill Tags
+        widget: list
+        field: { name: item, label: Tag, widget: string }
+      - { name: body, label: "Extra Notes (optional, shown at bottom)", widget: markdown, required: false }
+
+  # ── Site content (data files) ──────────────────────────────────
+  - name: site
+    label: Site Content
+    files:
+      - name: profile
+        label: "Profile — name, tagline, stats, links"
+        file: _data/profile.yml
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: initials, label: Initials (logo), widget: string }
+          - { name: title, label: Job Title, widget: string }
+          - { name: company, label: Company, widget: string }
+          - { name: industry, label: Industry, widget: string }
+          - { name: location, label: Location, widget: string }
+          - { name: tagline, label: Tagline (one line under your name), widget: text }
+          - { name: summary, label: Intro Paragraph, widget: text }
+          - name: stats
+            label: Hero Stats (exactly 3 looks best)
+            widget: list
+            fields:
+              - { name: value, label: Big Number, widget: string }
+              - { name: label, label: Label, widget: string }
+          - { name: email, label: Email, widget: string, required: false }
+          - { name: linkedin, label: LinkedIn URL, widget: string, required: false }
+          - { name: github, label: GitHub URL, widget: string, required: false }
+          - { name: resume_url, label: "Résumé URL (optional)", widget: string, required: false }
+          - { name: contact_note, label: Contact Section Note, widget: text }
+
+      - name: experience
+        label: "Career Timeline"
+        file: _data/experience.yml
+        fields:
+          - name: jobs
+            label: Positions (newest first)
+            widget: list
+            summary: "{{fields.role}} — {{fields.company}}"
+            fields:
+              - { name: role, label: Role, widget: string }
+              - { name: company, label: Company, widget: string }
+              - { name: period, label: "Period (e.g. 2026 — Present)", widget: string }
+              - { name: current, label: Current Role?, widget: boolean, default: false, required: false }
+              - { name: summary, label: Summary, widget: text }
+              - name: highlights
+                label: Highlights (bullets)
+                widget: list
+                required: false
+                field: { name: item, label: Highlight, widget: text }
+
+      - name: skills
+        label: "Expertise Grid"
+        file: _data/skills.yml
+        fields:
+          - name: groups
+            label: Domains
+            widget: list
+            summary: "{{fields.domain}}"
+            fields:
+              - { name: domain, label: Domain Name, widget: string }
+              - name: items
+                label: Skills
+                widget: list
+                field: { name: item, label: Skill, widget: string }
+
+      - name: certifications
+        label: "Certifications"
+        file: _data/certifications.yml
+        fields:
+          - name: certs
+            label: Certifications
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Certification, widget: string }
+              - { name: issuer, label: Issuer, widget: string, required: false }
+              - { name: year, label: Year, widget: string, required: false }

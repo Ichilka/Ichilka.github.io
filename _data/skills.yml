@@ -1,0 +1,20 @@
+# Expertise grid. Each block = one card. Add/remove freely.
+groups:
+  - domain: Networking
+    items: [LAN/WAN, Routing & Switching, Firewalls, VPNs]
+  - domain: Cybersecurity
+    items: [Security Infrastructure, Endpoint Security, Awareness Training, Incident Response]
+  - domain: Infrastructure
+    items: [Servers, Virtualization, Storage, Backups]
+  - domain: Cloud
+    items: [Azure, AWS, Microsoft 365, Entra ID]
+  - domain: Systems Administration
+    items: [Windows, Linux, Active Directory, Group Policy]
+  - domain: IT Operations
+    items: [Monitoring, Support, Asset Management, Disaster Recovery]
+  - domain: Leadership & Strategy
+    items: [IT Planning, Budgeting, Vendor Management, Project Management]
+  - domain: Automation
+    items: [PowerShell, Scripting, Deployment Automation]
+  - domain: Manufacturing IT
+    items: [Production Systems, Plant-Floor Technology, Print Workflow Support]

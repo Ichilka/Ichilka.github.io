@@ -1,0 +1,32 @@
+# ── Site settings ────────────────────────────────────────────────
+# If hosting at https://USERNAME.github.io          → baseurl: ""
+# If hosting at https://USERNAME.github.io/REPONAME → baseurl: "/REPONAME"
+title: Danny Luong-Chau
+description: >-
+  IT Director in printing & publishing — technology leadership across
+  infrastructure, security, cloud, and manufacturing operations.
+url: ""
+baseurl: ""
+
+# ── Build settings ───────────────────────────────────────────────
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

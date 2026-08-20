@@ -1,0 +1,196 @@
+---
+layout: default
+---
+{% assign p = site.data.profile %}
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="cropmarks" aria-hidden="true">
+    <span class="crop tl"></span><span class="crop tr"></span>
+    <span class="crop bl"></span><span class="crop br"></span>
+  </div>
+  <div class="container hero-inner">
+    <p class="eyebrow reveal">
+      <svg class="reg" aria-hidden="true"><use href="#regmark"/></svg>
+      {{ p.title }} · {{ p.industry }} · {{ p.location }}
+    </p>
+    <h1 class="hero-name reveal">{{ p.name }}</h1>
+    <p class="hero-tagline reveal">{{ p.tagline }}</p>
+    <p class="hero-summary reveal">{{ p.summary }}</p>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-primary" href="#work">View case studies</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+    <ul class="stats reveal">
+      {% for s in p.stats %}
+      <li class="stat">
+        <span class="stat-value">{{ s.value }}</span>
+        <span class="stat-label">{{ s.label }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ── CASE STUDIES ─────────────────────────────────────────── -->
+<section class="section" id="work">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><svg class="reg" aria-hidden="true"><use href="#regmark"/></svg> Selected work</p>
+      <h2>Case studies</h2>
+      <p class="section-sub">Real problems, real constraints, real outcomes — how technology decisions get made when production can't stop.</p>
+    </header>
+    <div class="cards">
+      {% assign studies = site.projects | where: "category", "case-study" | sort: "order" %}
+      {% for proj in studies %}
+      <article class="card case reveal">
+        <div class="case-meta">
+          <span class="chip chip-accent">{{ proj.timeframe }}</span>
+          <span class="chip">{{ proj.role }}</span>
+        </div>
+        <h3><a class="card-link" href="{{ proj.url | relative_url }}">{{ proj.title }}</a></h3>
+        <p>{{ proj.summary }}</p>
+        {% if proj.outcome and proj.outcome.first %}
+        <p class="case-outcome"><span class="outcome-tag">Outcome</span> {{ proj.outcome | first }}</p>
+        {% endif %}
+        <ul class="tags">
+          {% for t in proj.stack %}<li>{{ t }}</li>{% endfor %}
+        </ul>
+        <span class="card-more" aria-hidden="true">Read the case study →</span>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── LEADERSHIP ───────────────────────────────────────────── -->
+<section class="section section-alt" id="leadership">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><svg class="reg" aria-hidden="true"><use href="#regmark"/></svg> How I lead</p>
+      <h2>Leadership, from the floor up</h2>
+    </header>
+    <div class="lead-grid">
+      <blockquote class="lead-quote reveal">
+        I lead by giving people a voice and encouraging them to challenge
+        the status quo. Strong teams are built by empowering people to own
+        complex problems, build their own solutions, and explain the
+        reasoning behind their decisions.
+      </blockquote>
+      <div class="lead-principles">
+        <div class="card principle reveal">
+          <h3>Ownership over orders</h3>
+          <p>People don't grow by executing someone else's plan. They grow by owning the problem — and defending their answer.</p>
+        </div>
+        <div class="card principle reveal">
+          <h3>Challenge the status quo</h3>
+          <p>"That's how we've always done it" is a starting point for a question, not an answer.</p>
+        </div>
+        <div class="card principle reveal">
+          <h3>Lead from experience</h3>
+          <p>You can't lead engineers without understanding their work firsthand. I still get my hands dirty — experience makes better decisions, and better leaders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAREER ───────────────────────────────────────────────── -->
+<section class="section" id="career">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><svg class="reg" aria-hidden="true"><use href="#regmark"/></svg> The path here</p>
+      <h2>Career</h2>
+    </header>
+    <ol class="timeline">
+      {% for job in site.data.experience.jobs %}
+      <li class="tl-item reveal {% if job.current %}tl-current{% endif %}">
+        <div class="tl-node" aria-hidden="true"></div>
+        <div class="tl-body">
+          <p class="tl-period">{{ job.period }}</p>
+          <h3>{{ job.role }} <span class="tl-company">· {{ job.company }}</span></h3>
+          <p>{{ job.summary }}</p>
+          {% if job.highlights and job.highlights.size > 0 %}
+          <ul class="tl-highlights">
+            {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- ── EXPERTISE ────────────────────────────────────────────── -->
+<section class="section section-alt" id="expertise">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><svg class="reg" aria-hidden="true"><use href="#regmark"/></svg> What I work with</p>
+      <h2>Expertise</h2>
+    </header>
+    <div class="skills-grid">
+      {% for group in site.data.skills.groups %}
+      <div class="card skill reveal">
+        <h3>{{ group.domain }}</h3>
+        <ul class="tags">
+          {% for item in group.items %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="certs reveal">
+      <h3 class="certs-title">Certifications</h3>
+      <ul class="cert-list">
+        {% for c in site.data.certifications.certs %}
+        <li class="cert">
+          <svg class="reg" aria-hidden="true"><use href="#regmark"/></svg>
+          <span>{{ c.name }}{% if c.issuer != "" %} <em>· {{ c.issuer }}</em>{% endif %}{% if c.year != "" %} <em>· {{ c.year }}</em>{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── LAB ──────────────────────────────────────────────────── -->
+<section class="section" id="lab">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow"><svg class="reg" aria-hidden="true"><use href="#regmark"/></svg> Still hands-on</p>
+      <h2>The lab</h2>
+      <p class="section-sub">Directors who stop building start guessing. This is where ideas get proven before they're proposed.</p>
+    </header>
+    <div class="cards cards-lab">
+      {% assign labs = site.projects | where: "category", "homelab" | sort: "order" %}
+      {% for proj in labs %}
+      <article class="card case reveal">
+        <h3><a class="card-link" href="{{ proj.url | relative_url }}">{{ proj.title }}</a></h3>
+        <p>{{ proj.summary }}</p>
+        <ul class="tags">
+          {% for t in proj.stack %}<li>{{ t }}</li>{% endfor %}
+        </ul>
+        <span class="card-more" aria-hidden="true">Details →</span>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ──────────────────────────────────────────────── -->
+<section class="section section-contact" id="contact">
+  <div class="container">
+    <div class="contact-panel reveal">
+      <p class="eyebrow"><svg class="reg" aria-hidden="true"><use href="#regmark"/></svg> Contact</p>
+      <h2>Let's talk technology.</h2>
+      <p>{{ p.contact_note }}</p>
+      <div class="hero-ctas">
+        {% if p.email != "" %}<a class="btn btn-primary" href="mailto:{{ p.email }}">Email me</a>{% endif %}
+        {% if p.linkedin != "" %}<a class="btn btn-ghost" href="{{ p.linkedin }}" rel="noopener">LinkedIn</a>{% endif %}
+        {% if p.github != "" %}<a class="btn btn-ghost" href="{{ p.github }}" rel="noopener">GitHub</a>{% endif %}
+        {% if p.resume_url != "" %}<a class="btn btn-ghost" href="{{ p.resume_url | relative_url }}">Résumé</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

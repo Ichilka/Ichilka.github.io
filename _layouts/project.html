@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<article class="section project-page">
+  <div class="container container-narrow">
+    <p class="eyebrow reveal">
+      <svg class="reg" aria-hidden="true"><use href="#regmark"/></svg>
+      {% if page.category == "homelab" %}Lab project{% else %}Case study{% endif %}
+    </p>
+    <h1 class="project-title reveal">{{ page.title }}</h1>
+    <div class="case-meta reveal">
+      {% if page.timeframe %}<span class="chip chip-accent">{{ page.timeframe }}</span>{% endif %}
+      {% if page.role %}<span class="chip">{{ page.role }}</span>{% endif %}
+    </div>
+    <p class="project-summary reveal">{{ page.summary }}</p>
+
+    {% if page.challenge %}
+    <section class="project-block reveal">
+      <h2><span class="block-tag block-c">C</span> Challenge</h2>
+      <p>{{ page.challenge }}</p>
+    </section>
+    {% endif %}
+
+    {% if page.approach %}
+    <section class="project-block reveal">
+      <h2><span class="block-tag block-m">A</span> Approach</h2>
+      <ul class="project-list">
+        {% for item in page.approach %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if page.outcome %}
+    <section class="project-block reveal">
+      <h2><span class="block-tag block-y">O</span> Outcome</h2>
+      <ul class="project-list">
+        {% for item in page.outcome %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if content != "" %}
+    <section class="project-block project-notes reveal">
+      {{ content }}
+    </section>
+    {% endif %}
+
+    {% if page.stack %}
+    <ul class="tags reveal">
+      {% for t in page.stack %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    <p class="reveal"><a class="btn btn-ghost" href="{{ '/' | relative_url }}#work">← Back to all work</a></p>
+  </div>
+</article>

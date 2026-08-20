@@ -1,0 +1,39 @@
+# Everything about YOU. Edit here (or at /nin) — never touch the HTML.
+name: Danny Luong-Chau
+initials: DL
+title: IT Director
+company: Zenger Group
+industry: Printing & Publishing
+location: Buffalo, NY
+
+# One line under your name. The thesis of the whole site.
+tagline: >-
+  I run the technology behind the presses — infrastructure, security,
+  and the people who keep a multi-plant operation moving.
+
+# Short intro paragraph in the hero.
+summary: >-
+  Technology leader with 12 years in IT — 9 hands-on, 3 leading teams.
+  I direct IT strategy and operations for a multi-facility printing and
+  publishing manufacturer, and I still build, because decisions are
+  better when you understand the work behind them.
+
+# The three numbers a recruiter/CEO sees in the first 10 seconds.
+stats:
+  - value: "4"
+    label: plants migrated in 6 months
+  - value: "100+"
+    label: endpoints across facilities
+  - value: "12 yrs"
+    label: in IT — still hands-on
+
+# Contact / social. Leave a value blank to hide it.
+email: hello@ichikaonline.com
+linkedin: "https://www.linkedin.com/in/YOUR-LINKEDIN"
+github: "https://github.com/YOUR-GITHUB"
+resume_url: ""
+
+# Availability note in the contact section.
+contact_note: >-
+  Always open to talking shop — infrastructure, security, manufacturing IT,
+  or building IT teams that own their work.

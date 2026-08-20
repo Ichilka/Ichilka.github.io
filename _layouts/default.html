@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Print registration mark — the site's signature glyph -->
+    <symbol id="regmark" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="12" y1="1"  x2="12" y2="7"  stroke="currentColor" stroke-width="1.4"/>
+      <line x1="12" y1="17" x2="12" y2="23" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="1"  y1="12" x2="7"  y2="12" stroke="currentColor" stroke-width="1.4"/>
+      <line x1="17" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="12" cy="12" r="2.2" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Home">
+      <span class="brand-mark"><svg class="reg" aria-hidden="true"><use href="#regmark"/></svg></span>
+      <span class="brand-text">{{ site.data.profile.initials }}</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="{{ '/' | relative_url }}#work">Case Studies</a>
+      <a href="{{ '/' | relative_url }}#leadership">Leadership</a>
+      <a href="{{ '/' | relative_url }}#career">Career</a>
+      <a href="{{ '/' | relative_url }}#expertise">Expertise</a>
+      <a href="{{ '/' | relative_url }}#lab">Lab</a>
+      <a class="nav-cta" href="{{ '/' | relative_url }}#contact">Get in touch</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  {{ content }}
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="footer-mark"><svg class="reg" aria-hidden="true"><use href="#regmark"/></svg></span>
+    <p>© <span id="year"></span> {{ site.data.profile.name }} · {{ site.data.profile.title }}, {{ site.data.profile.industry }}</p>
+  </div>
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

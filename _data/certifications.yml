@@ -1,0 +1,20 @@
+# Certifications. Add a block per cert. `year` is optional.
+certs:
+  - name: CCNA
+    issuer: Cisco
+    year: ""
+  - name: Certified Cloud Practitioner
+    issuer: AWS
+    year: ""
+  - name: Security+
+    issuer: CompTIA
+    year: ""
+  - name: Network+
+    issuer: CompTIA
+    year: ""
+  - name: A+
+    issuer: CompTIA
+    year: ""
+  - name: AI Agent Essentials
+    issuer: ""
+    year: ""

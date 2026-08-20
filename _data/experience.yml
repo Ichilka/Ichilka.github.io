@@ -1,0 +1,46 @@
+# Career timeline. Newest first. Add a new role = add a new block.
+# NOTE: verify the years — best guesses were used where dates weren't provided.
+jobs:
+  - role: IT Director
+    company: Zenger Group
+    period: 2026 — Present
+    current: true
+    summary: >-
+      Own IT strategy and operations for a printing & publishing manufacturer
+      of ~150 people across multiple facilities — infrastructure, security,
+      cloud, budget, vendors, and the production floor.
+    highlights:
+      - Led the migration of network and security infrastructure across 4
+        manufacturing plants in 6 months with minimal disruption to production.
+      - Built the company's first security awareness and phishing simulation
+        program, measurably improving detection and surfacing real gaps.
+      - Direct the environment supporting 100+ workstations, servers,
+        virtualization, and manufacturing systems.
+
+  - role: IT Coordinator
+    company: Zenger Group
+    period: "2026"
+    summary: >-
+      Took ownership of infrastructure, endpoints, and day-to-day IT
+      operations across the plant. Promoted to IT Director within 6 months.
+    highlights:
+      - Stabilized and documented core systems while planning the
+        multi-plant infrastructure migration.
+
+  - role: Energy Team Lead
+    company: Tesla
+    period: 2025 — 2026
+    summary: >-
+      Led a technical team in Tesla's energy division — coaching, scheduling,
+      quality, and hitting operational targets at scale.
+    highlights:
+      - First formal leadership role; built the habit of leading from
+        technical credibility rather than title.
+
+  - role: Hands-On IT & Technical Roles
+    company: Insurance · Restaurants · Small Business · Manufacturing
+    period: 2014 — 2025
+    summary: >-
+      Nine years across helpdesk, systems, and networking in four industries —
+      the foundation everything above is built on.
+    highlights: []
