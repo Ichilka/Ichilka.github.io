@@ -16,5 +16,5 @@ certs:
     issuer: CompTIA
     year: ""
   - name: AI Agent Essentials
-    issuer: ""
+    issuer: CompTIA
     year: ""
