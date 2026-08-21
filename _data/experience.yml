@@ -31,7 +31,7 @@ jobs:
     company: Tesla
     period: 2025 — 2026
     summary: >-
-      Led a technical team in Tesla's energy division — coaching, scheduling,
+      Led a technical team in Tesla's energy division; coaching, scheduling,
       quality, and hitting operational targets at scale.
     highlights:
       - First formal leadership role; built the habit of leading from
@@ -43,4 +43,5 @@ jobs:
     summary: >-
       Nine years across helpdesk, systems, and networking in four industries —
       the foundation everything above is built on.
-    highlights: []
+    highlights:
+      - Built the technical foundation — helpdesk to networking — worked across four industries
